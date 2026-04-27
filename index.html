@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osgood Indiana — Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     RESET & BASE
+  ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* Brand colors */
+    --navy:        #1b365d;
+    --deep-navy:   #121c4d;
+    --steel-blue:  #2b4d66;
+    --body-text:   #3c4858;
+    --pine:        #244545;
+    --off-white:   #f5f5f2;
+    --nav-dark:    #0f0f0f;
+    --nav-text:    #dddddd;
+    --mid-gray:    #434343;
+    --light-border:#dee2e6;
+    --white:       #ffffff;
+
+    /* Typography */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body:    'Open Sans', sans-serif;
+    --font-ui:      'Source Sans 3', sans-serif;
+
+    /* Spacing */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 32px;
+    --space-lg: 64px;
+    --space-xl: 96px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--body-text);
+    background: var(--off-white);
+  }
+
+  /* ============================================================
+     LAYOUT
+  ============================================================ */
+  .page-wrapper { display: flex; min-height: 100vh; }
+
+  /* Sidebar nav */
+  .sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: var(--navy);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+  }
+
+  .sidebar-logo {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .sidebar-logo .brand-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: var(--white);
+  }
+
+  .sidebar-logo .brand-sub {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  .sidebar nav { padding: 20px 0; flex: 1; }
+
+  .sidebar nav a {
+    display: block;
+    padding: 9px 24px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+
+  .sidebar nav a:hover,
+  .sidebar nav a.active {
+    color: var(--white);
+    background: rgba(255,255,255,0.08);
+    border-left-color: rgba(255,255,255,0.5);
+  }
+
+  .sidebar-footer {
+    padding: 16px 24px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Main content */
+  .main-content { flex: 1; overflow-x: hidden; }
+
+  /* ============================================================
+     HERO
+  ============================================================ */
+  .guide-hero {
+    background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, var(--steel-blue) 100%);
+    color: var(--white);
+    padding: 80px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .guide-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .guide-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 200px;
+    width: 500px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .guide-hero .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+
+  .guide-hero h1 {
+    font-family: var(--font-display);
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .guide-hero p {
+    font-family: var(--font-ui);
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    max-width: 560px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .guide-hero .meta-row {
+    display: flex;
+    gap: 32px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .guide-hero .meta-item {
+    text-align: center;
+  }
+
+  .guide-hero .meta-item .val {
+    font-family: var(--font-display);
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .guide-hero .meta-item .lbl {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  /* ============================================================
+     SECTIONS
+  ============================================================ */
+  .guide-section {
+    padding: 72px 64px;
+    border-bottom: 1px solid var(--light-border);
+  }
+
+  .guide-section:nth-child(even) { background: var(--white); }
+  .guide-section:nth-child(odd)  { background: var(--off-white); }
+
+  .section-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--steel-blue);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 42px;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .section-desc {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--mid-gray);
+    max-width: 620px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  /* ============================================================
+     COLOR PALETTE
+  ============================================================ */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .color-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background: var(--white);
+  }
+
+  .color-swatch {
+    height: 120px;
+    width: 100%;
+    position: relative;
+  }
+
+  .color-swatch .usage-dot {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+  }
+
+  .color-info {
+    padding: 14px 16px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .color-name {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--body-text);
+    margin-bottom: 2px;
+  }
+
+  .color-hex {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+
+  .color-rgb {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+
+  .color-usage {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: #999;
+    line-height: 1.4;
+  }
+
+  /* ============================================================
+     TYPOGRAPHY
+  ============================================================ */
+  .type-specimens { display: flex; flex-direction: column; gap: 32px; }
+
+  .type-specimen {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 32px 36px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .type-meta { border-right: 1px solid var(--light-border); padding-right: 32px; }
+
+  .type-meta .tm-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--steel-blue);
+    margin-bottom: 8px;
+  }
+
+  .type-meta .tm-name {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--body-text);
+    margin-bottom: 4px;
+  }
+
+  .type-meta .tm-detail {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #999;
+    line-height: 1.8;
+  }
+
+  .type-sample { padding-left: 8px; }
+
+  .sample-h1 {
+    font-family: var(--font-display);
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--navy), var(--steel-blue));
+    padding: 20px 28px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+
+  .sample-h2 {
+    font-family: var(--font-display);
+    font-size: 43px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--navy);
+  }
+
+  .sample-h3 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--navy);
+  }
+
+  .sample-h4 {
+    font-family: var(--font-ui);
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--steel-blue);
+  }
+
+  .sample-body {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--body-text);
+    max-width: 500px;
+  }
+
+  .sample-ui {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--steel-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .sample-nav {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--nav-text);
+    background: var(--nav-dark);
+    padding: 10px 18px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  /* ============================================================
+     FONT FAMILIES
+  ============================================================ */
+  .font-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .font-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border-top: 4px solid var(--navy);
+  }
+
+  .font-card.accent-pine { border-top-color: var(--pine); }
+  .font-card.accent-steel { border-top-color: var(--steel-blue); }
+
+  .font-card .fc-role {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 8px;
+  }
+
+  .font-card .fc-name {
+    font-family: var(--font-ui);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .font-card .fc-source {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 16px;
+  }
+
+  .font-card .fc-weights {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .font-card .fc-weight {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: #777;
+  }
+
+  .font-card .fc-alpha-display {
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-top: 12px;
+    border-top: 1px solid var(--light-border);
+    padding-top: 12px;
+  }
+
+  .font-card .fc-alpha-body {
+    font-family: var(--font-body);
+    font-size: 18px;
+    color: var(--body-text);
+    line-height: 1.5;
+    margin-top: 12px;
+    border-top: 1px solid var(--light-border);
+    padding-top: 12px;
+  }
+
+  .font-card .fc-alpha-ui {
+    font-family: var(--font-ui);
+    font-size: 16px;
+    color: var(--body-text);
+    line-height: 1.5;
+    margin-top: 12px;
+    border-top: 1px solid var(--light-border);
+    padding-top: 12px;
+  }
+
+  /* ============================================================
+     LOGO
+  ============================================================ */
+  .logo-section { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  .logo-display {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    min-height: 180px;
+  }
+
+  .logo-display.dark-bg {
+    background: var(--navy);
+  }
+
+  .logo-display img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+  }
+
+  .logo-display .logo-fallback {
+    font-family: var(--font-display);
+    font-size: 36px;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .logo-display .logo-fallback.light { color: var(--navy); }
+  .logo-display .logo-fallback.dark  { color: var(--white); }
+
+  .logo-specs {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-border);
+    font-family: var(--font-ui);
+    font-size: 14px;
+  }
+
+  .spec-row:last-child { border-bottom: none; }
+  .spec-row .spec-key { color: #888; font-weight: 400; }
+  .spec-row .spec-val { color: var(--body-text); font-weight: 600; font-family: 'Courier New', monospace; font-size: 13px; }
+
+  /* ============================================================
+     COMPONENTS
+  ============================================================ */
+  .component-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .component-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .component-preview {
+    padding: 32px 28px;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .component-label {
+    padding: 14px 20px;
+    border-top: 1px solid var(--light-border);
+    background: var(--off-white);
+  }
+
+  .component-label .comp-name {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--body-text);
+    margin-bottom: 2px;
+  }
+
+  .component-label .comp-desc {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: #999;
+  }
+
+  /* Actual component demos */
+  .demo-hero-bar {
+    width: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('https://osgoodindiana.org/sites/default/files/styles/hero_banner_1900_x_450/public/2026-01/snow-covered-osgood.png') center/cover;
+    padding: 28px 24px;
+    border-radius: 8px;
+    text-align: left;
+  }
+
+  .demo-hero-bar h2 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .demo-hero-bar p {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .demo-nav {
+    width: 100%;
+    background: var(--nav-dark);
+    border-radius: 6px;
+    padding: 14px 18px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .demo-nav span {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--nav-text);
+    cursor: pointer;
+  }
+
+  .demo-nav span.active { color: var(--white); }
+
+  .demo-card {
+    width: 100%;
+    background: var(--pine);
+    border-radius: 8px;
+    padding: 20px;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.15);
+  }
+
+  .demo-card h4 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .demo-card p {
+    font-family: var(--font-body);
+    font-size: 13px;
+    opacity: 0.85;
+    line-height: 1.5;
+  }
+
+  .demo-footer-strip {
+    width: 100%;
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 20px 22px;
+    color: var(--white);
+  }
+
+  .demo-footer-strip h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .demo-footer-strip p {
+    font-family: var(--font-body);
+    font-size: 12px;
+    opacity: 0.7;
+    line-height: 1.6;
+  }
+
+  .demo-search {
+    width: 100%;
+    background: rgba(255,255,255,0.925);
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--light-border);
+  }
+
+  .demo-search input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-right: none;
+    padding: 8px 12px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--steel-blue);
+    outline: none;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .demo-search button {
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* ============================================================
+     BUTTONS
+  ============================================================ */
+  .button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+
+  .btn-demo {
+    padding: 10px 22px;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s, transform 0.1s;
+  }
+
+  .btn-demo:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .btn-primary-demo {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .btn-pine-demo {
+    background: var(--pine);
+    color: var(--white);
+    border-radius: 8px;
+    border: 2px solid rgba(255,255,255,0.2);
+  }
+
+  .btn-outline-demo {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+    border-radius: 8px;
+  }
+
+  .btn-steel-demo {
+    background: var(--steel-blue);
+    color: var(--white);
+    border-radius: 6px;
+  }
+
+  .btn-ghost-demo {
+    background: transparent;
+    color: var(--steel-blue);
+    border: none;
+    text-decoration: underline;
+    padding: 10px 4px;
+  }
+
+  .btn-spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .btn-spec-table th {
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .btn-spec-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--light-border);
+    color: var(--body-text);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+  }
+
+  .btn-spec-table tr:last-child td { border-bottom: none; }
+  .btn-spec-table tr:nth-child(even) { background: var(--off-white); }
+
+  .btn-spec-table .label-col {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--navy);
+  }
+
+  /* ============================================================
+     NAVIGATION STRUCTURE
+  ============================================================ */
+  .nav-demo-full {
+    background: var(--nav-dark);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    margin-bottom: 32px;
+  }
+
+  .nav-demo-header {
+    background: var(--white);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--light-border);
+  }
+
+  .nav-demo-header .logo-text {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .nav-demo-bar {
+    background: var(--nav-dark);
+    padding: 0 24px;
+    display: flex;
+    gap: 2px;
+  }
+
+  .nav-demo-bar .nav-item {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--nav-text);
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+  }
+
+  .nav-demo-bar .nav-item:hover,
+  .nav-demo-bar .nav-item.active {
+    color: var(--white);
+    border-bottom-color: rgba(255,255,255,0.4);
+  }
+
+  /* ============================================================
+     SPACING & GRID
+  ============================================================ */
+  .spacing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .space-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+
+  .space-block {
+    background: var(--navy);
+    border-radius: 4px;
+    margin: 0 auto 12px;
+    opacity: 0.8;
+  }
+
+  .space-label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--body-text);
+    margin-bottom: 2px;
+  }
+
+  .space-value {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  /* ============================================================
+     TONE & VOICE
+  ============================================================ */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .voice-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .voice-card.do { border-top: 4px solid var(--pine); }
+  .voice-card.dont { border-top: 4px solid #c0392b; }
+
+  .voice-card .vc-title {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .voice-card.do .vc-title { color: var(--pine); }
+  .voice-card.dont .vc-title { color: #c0392b; }
+
+  .voice-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .voice-card ul li {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--body-text);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .voice-card.do ul li::before { content: '✓'; position: absolute; left: 0; color: var(--pine); font-weight: 700; }
+  .voice-card.dont ul li::before { content: '✗'; position: absolute; left: 0; color: #c0392b; font-weight: 700; }
+
+  .trait-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .trait-pill {
+    background: var(--navy);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 100px;
+  }
+
+  .trait-pill.secondary {
+    background: var(--pine);
+  }
+
+  /* ============================================================
+     TECH STACK
+  ============================================================ */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .tech-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--navy);
+  }
+
+  .tech-card.green { border-left-color: var(--pine); }
+  .tech-card.steel { border-left-color: var(--steel-blue); }
+
+  .tech-card .tc-category {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #aaa;
+    margin-bottom: 4px;
+  }
+
+  .tech-card .tc-name {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--body-text);
+    margin-bottom: 4px;
+  }
+
+  .tech-card .tc-detail {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.5;
+  }
+
+  /* ============================================================
+     DO / DON'T COLOR USAGE
+  ============================================================ */
+  .color-usage-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .color-usage-table th {
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .color-usage-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--light-border);
+    vertical-align: middle;
+  }
+
+  .color-usage-table tr:last-child td { border-bottom: none; }
+
+  .swatch-dot {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  /* ============================================================
+     SCROLLBAR
+  ============================================================ */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(27,54,93,0.3); border-radius: 3px; }
+
+  /* ============================================================
+     PRINT / RESPONSIVE
+  ============================================================ */
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .guide-hero, .guide-section { padding: 48px 28px; }
+    .font-showcase { grid-template-columns: 1fr; }
+    .logo-section { grid-template-columns: 1fr; }
+    .voice-grid { grid-template-columns: 1fr; }
+    .type-specimen { grid-template-columns: 1fr; }
+    .type-meta { border-right: none; padding-right: 0; border-bottom: 1px solid var(--light-border); padding-bottom: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ============================================================
+       SIDEBAR NAVIGATION
+  ============================================================ -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="brand-name">Osgood<br>Indiana</div>
+      <div class="brand-sub">Brand Guide</div>
+    </div>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#logo">Logo</a>
+      <a href="#colors">Color Palette</a>
+      <a href="#typography">Typography</a>
+      <a href="#components">Components</a>
+      <a href="#buttons">Buttons</a>
+      <a href="#navigation">Navigation</a>
+      <a href="#spacing">Spacing</a>
+      <a href="#voice">Voice &amp; Tone</a>
+      <a href="#tech">Tech Stack</a>
+    </nav>
+    <div class="sidebar-footer">
+      osgoodindiana.org<br>
+      Brand Guide v1.0 — 2026
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main class="main-content">
+
+    <!-- HERO -->
+    <div class="guide-hero" id="overview">
+      <div class="eyebrow">Brand Identity Guide</div>
+      <h1>Town of Osgood,<br>Indiana</h1>
+      <p>A comprehensive visual identity reference for the official Town of Osgood website — covering colors, typography, components, and usage guidelines for designers, developers, and content editors.</p>
+      <div class="meta-row">
+        <div class="meta-item"><div class="val">3</div><div class="lbl">Typefaces</div></div>
+        <div class="meta-item"><div class="val">8</div><div class="lbl">Brand Colors</div></div>
+        <div class="meta-item"><div class="val">7</div><div class="lbl">Nav Sections</div></div>
+        <div class="meta-item"><div class="val">D10</div><div class="lbl">Platform</div></div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         LOGO
+    ============================================================ -->
+    <section class="guide-section" id="logo">
+      <div class="section-label">Brand Mark</div>
+      <h2 class="section-title">Logo</h2>
+      <p class="section-desc">The site logo is a PNG image used in the header on a white background. It should always have adequate clear space and never be resized disproportionately. Below are the two primary display contexts.</p>
+
+      <div class="logo-section">
+        <div>
+          <div class="logo-display" style="margin-bottom:16px;">
+            <img src="https://osgoodindiana.org/sites/default/files/2024-01-04_12-47-30.png"
+                 alt="Osgood Indiana Logo"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <div class="logo-fallback light" style="display:none;">TOWN OF<br>OSGOOD<br>INDIANA</div>
+          </div>
+          <div class="component-label" style="border-radius:0 0 10px 10px; background:var(--off-white); padding:12px 16px; border-top:1px solid var(--light-border);">
+            <div class="comp-name">Light Background</div>
+            <div class="comp-desc">Primary usage — white or off-white header</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="logo-display dark-bg" style="margin-bottom:16px;">
+            <img src="https://osgoodindiana.org/sites/default/files/2024-01-04_12-47-30.png"
+                 alt="Osgood Indiana Logo"
+                 style="filter: brightness(0) invert(1);"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <div class="logo-fallback dark" style="display:none;">TOWN OF<br>OSGOOD<br>INDIANA</div>
+          </div>
+          <div class="component-label" style="border-radius:0 0 10px 10px; background:var(--off-white); padding:12px 16px; border-top:1px solid var(--light-border);">
+            <div class="comp-name">Dark Background</div>
+            <div class="comp-desc">Inverted for use on navy footer or dark overlays</div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <div class="logo-specs">
+        <div class="spec-row"><span class="spec-key">File path</span><span class="spec-val">/sites/default/files/2024-01-04_12-47-30.png</span></div>
+        <div class="spec-row"><span class="spec-key">Natural size</span><span class="spec-val">2052 × 744 px</span></div>
+        <div class="spec-row"><span class="spec-key">Aspect ratio</span><span class="spec-val">2.76 : 1 (approx)</span></div>
+        <div class="spec-row"><span class="spec-key">Format</span><span class="spec-val">PNG (transparent or white bg)</span></div>
+        <div class="spec-row"><span class="spec-key">Display width in header</span><span class="spec-val">~291 px</span></div>
+        <div class="spec-row"><span class="spec-key">Min clear space</span><span class="spec-val">16 px all sides</span></div>
+        <div class="spec-row"><span class="spec-key">Alt text</span><span class="spec-val">Osgood Indiana — Home</span></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COLOR PALETTE
+    ============================================================ -->
+    <section class="guide-section" id="colors">
+      <div class="section-label">Visual Identity</div>
+      <h2 class="section-title">Color Palette</h2>
+      <p class="section-desc">The palette is built around a civic navy blue with pine green accents and a clean off-white base. All colors are extracted directly from the live site's computed styles.</p>
+
+      <div class="color-grid">
+
+        <div class="color-card">
+          <div class="color-swatch" style="background:#1b365d;"></div>
+          <div class="color-info">
+            <div class="color-name">Navy — Primary</div>
+            <div class="color-hex">#1B365D</div>
+            <div class="color-rgb">rgb(27, 54, 93)</div>
+            <div class="color-usage">Footer background, primary buttons, H2/H3 headings, search submit</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background:#121c4d;"></div>
+          <div class="color-info">
+            <div class="color-name">Deep Navy</div>
+            <div class="color-hex">#121C4D</div>
+            <div class="color-rgb">rgb(18, 28, 77)</div>
+            <div class="color-usage">Gradient deep end, hover states, high-emphasis text on dark</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background:#2b4d66;"></div>
+          <div class="color-info">
+            <div class="color-name">Steel Blue</div>
+            <div class="color-hex">#2B4D66</div>
+            <div class="color-rgb">rgb(43, 77, 102)</div>
+            <div class="color-usage">Header text/links, search overlay text, search icon button</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background:#244545;"></div>
+          <div class="color-info">
+            <div class="color-name">Pine Green — Accent</div>
+            <div class="color-hex">#244545</div>
+            <div class="color-rgb">rgb(36, 69, 69)</div>
+            <div class="color-usage">Content cards, feature blocks, bordered sections (bs-bg-pine class)</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background:#3c4858;"></div>
+          <div class="color-info">
+            <div class="color-name">Body Text</div>
+            <div class="color-hex">#3C4858</div>
+            <div class="color-rgb">rgb(60, 72, 88)</div>
+            <div class="color-usage">Primary body text, links in main content, default paragraph color</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background:#f5f5f2; border:1px solid #e8e8e4;"></div>
+          <div class="color-info">
+            <div class="color-name">Off White — Base</div>
+            <div class="color-hex">#F5F5F2</div>
+            <div class="color-rgb">rgb(245, 245, 242)</div>
+            <div class="color-usage">Page background (even rows), content containers, subtle section fills</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background:#0f0f0f;"></div>
+          <div class="color-info">
+            <div class="color-name">Near Black — Nav</div>
+            <div class="color-hex">#0F0F0F</div>
+            <div class="color-rgb">rgb(15, 15, 15)</div>
+            <div class="color-usage">Navigation bar background only</div>
+          </div>
+        </div>
+
+        <div class="color-card">
+          <div class="color-swatch" style="background:#dddddd;"></div>
+          <div class="color-info">
+            <div class="color-name">Light Gray — Nav Text</div>
+            <div class="color-hex">#DDDDDD</div>
+            <div class="color-rgb">rgb(221, 221, 221)</div>
+            <div class="color-usage">Navigation link color on dark nav bar</div>
+          </div>
+        </div>
+
+      </div>
+
+      <br>
+      <h3 style="font-family:var(--font-display);font-size:28px;color:var(--navy);margin-bottom:20px;">Color Usage Reference</h3>
+      <table class="color-usage-table">
+        <thead>
+          <tr>
+            <th>Color</th>
+            <th>Hex</th>
+            <th>Used For</th>
+            <th>CSS / Bootstrap Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="swatch-dot" style="background:#1b365d;"></span>Navy Primary</td>
+            <td>#1B365D</td>
+            <td>Footer bg, primary buttons, headings</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-dot" style="background:#244545;"></span>Pine Green</td>
+            <td>#244545</td>
+            <td>Feature cards, highlighted blocks</td>
+            <td><code>bs-bg-pine</code></td>
+          </tr>
+          <tr>
+            <td><span class="swatch-dot" style="background:#2b4d66;"></span>Steel Blue</td>
+            <td>#2B4D66</td>
+            <td>Header text, icon links</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-dot" style="background:#3c4858;"></span>Body Text</td>
+            <td>#3C4858</td>
+            <td>Paragraphs, default content</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-dot" style="background:#f5f5f2; border:1px solid #ccc;"></span>Off White</td>
+            <td>#F5F5F2</td>
+            <td>Page background</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-dot" style="background:#0f0f0f;"></span>Near Black</td>
+            <td>#0F0F0F</td>
+            <td>Navigation bar only</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         TYPOGRAPHY
+    ============================================================ -->
+    <section class="guide-section" id="typography">
+      <div class="section-label">Type System</div>
+      <h2 class="section-title">Typography</h2>
+      <p class="section-desc">Three typefaces form the full system. Bebas Neue handles all display headings. Open Sans is the body workhorse. Source Sans 3 (formerly Source Sans Pro) covers navigation and UI elements.</p>
+
+      <div class="font-showcase">
+        <div class="font-card">
+          <div class="fc-role">Display / Headings</div>
+          <div class="fc-name">Bebas Neue</div>
+          <div class="fc-source">Google Fonts — Free</div>
+          <div class="fc-weights">
+            <div class="fc-weight">Regular (400) — only weight available</div>
+          </div>
+          <div class="fc-alpha-display">ABCDEFGH<br>IJKLMNOP<br>12345678</div>
+        </div>
+        <div class="font-card accent-steel">
+          <div class="fc-role">Body Text</div>
+          <div class="fc-name">Open Sans</div>
+          <div class="fc-source">Google Fonts — Free</div>
+          <div class="fc-weights">
+            <div class="fc-weight">Light 300 · Regular 400</div>
+            <div class="fc-weight">SemiBold 600 · Bold 700</div>
+          </div>
+          <div class="fc-alpha-body" style="font-family:var(--font-body);">The quick brown fox<br>jumps over the lazy dog.<br>1234567890</div>
+        </div>
+        <div class="font-card accent-pine">
+          <div class="fc-role">UI / Navigation</div>
+          <div class="fc-name">Source Sans 3</div>
+          <div class="fc-source">Google Fonts — Free (formerly Source Sans Pro)</div>
+          <div class="fc-weights">
+            <div class="fc-weight">Light 300 · Regular 400</div>
+            <div class="fc-weight">SemiBold 600 · Bold 700</div>
+          </div>
+          <div class="fc-alpha-ui" style="font-family:var(--font-ui);">Navigation &amp; UI Labels<br>TOWN HALL · SERVICES<br>1234567890</div>
+        </div>
+      </div>
+
+      <div class="type-specimens">
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="tm-label">H1 — Hero</div>
+            <div class="tm-name">Bebas Neue</div>
+            <div class="tm-detail">
+              Size: 58px<br>
+              Weight: 400<br>
+              Line-height: 1<br>
+              Color: #FFFFFF<br>
+              Usage: Hero banners only
+            </div>
+          </div>
+          <div class="type-sample">
+            <div class="sample-h1">Welcome to Osgood</div>
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="tm-label">H2 — Section Title</div>
+            <div class="tm-name">Bebas Neue</div>
+            <div class="tm-detail">
+              Size: 43px<br>
+              Weight: 400<br>
+              Line-height: 1<br>
+              Color: #1B365D<br>
+              Usage: Section/page headings
+            </div>
+          </div>
+          <div class="type-sample">
+            <div class="sample-h2">Town Hall Information</div>
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="tm-label">H3 — Sub-heading</div>
+            <div class="tm-name">Bebas Neue</div>
+            <div class="tm-detail">
+              Size: 32px<br>
+              Weight: 400<br>
+              Line-height: 1<br>
+              Color: #1B365D<br>
+              Usage: Card titles, sub-sections
+            </div>
+          </div>
+          <div class="type-sample">
+            <div class="sample-h3">Town of Osgood, Indiana Town Hall</div>
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="tm-label">H4 — Card Sub</div>
+            <div class="tm-name">Source Sans 3 Light</div>
+            <div class="tm-detail">
+              Size: 24px<br>
+              Weight: 300<br>
+              Line-height: 1<br>
+              Color: #FFFFFF (on dark)<br>
+              Usage: Card sub-titles
+            </div>
+          </div>
+          <div class="type-sample">
+            <div class="sample-h4">Department of Public Works</div>
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="tm-label">Body</div>
+            <div class="tm-name">Open Sans</div>
+            <div class="tm-detail">
+              Size: 18px<br>
+              Weight: 400<br>
+              Line-height: 1.6<br>
+              Color: #3C4858<br>
+              Usage: All body copy
+            </div>
+          </div>
+          <div class="type-sample">
+            <div class="sample-body">An easy and convenient method to view and pay your utility bill online. Contact the Osgood Town Hall for more information about services available to residents.</div>
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="tm-label">Navigation</div>
+            <div class="tm-name">Source Sans 3</div>
+            <div class="tm-detail">
+              Size: 13–14px<br>
+              Weight: 600–700<br>
+              Color: #DDDDDD (on nav)<br>
+              Usage: Top-level nav only
+            </div>
+          </div>
+          <div class="type-sample">
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <div class="sample-nav">Town Hall</div>
+              <div class="sample-nav">Services</div>
+              <div class="sample-nav">Departments</div>
+              <div class="sample-nav">Community</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COMPONENTS
+    ============================================================ -->
+    <section class="guide-section" id="components">
+      <div class="section-label">UI Patterns</div>
+      <h2 class="section-title">Components</h2>
+      <p class="section-desc">Core reusable blocks and layout patterns used across the site, built with Drupal Layout Builder and the Bootstrap 5 theme. Each component maps to a Drupal block type.</p>
+
+      <div class="component-grid">
+
+        <div class="component-card">
+          <div class="component-preview" style="padding:0;overflow:hidden;min-height:160px;">
+            <div class="demo-hero-bar" style="min-height:160px;border-radius:0;display:flex;flex-direction:column;justify-content:flex-end;">
+              <h2>Welcome to Osgood</h2>
+              <p>Town of Osgood, Ripley County, Indiana</p>
+            </div>
+          </div>
+          <div class="component-label">
+            <div class="comp-name">Hero Banner</div>
+            <div class="comp-desc">Full-width image (1900×450) with H1 white overlay. Block type: large_banner</div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-preview" style="background:var(--off-white);">
+            <div class="demo-card" style="width:100%;">
+              <h4>Osgood Trails</h4>
+              <p>A beautiful trail around the Town of Osgood and extending to Ripley County parks.</p>
+            </div>
+          </div>
+          <div class="component-label">
+            <div class="comp-name">Feature Card (Pine)</div>
+            <div class="comp-desc">Pine green bg (#244545), rounded corners, 2px border, white text. Class: bs-bg-pine</div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-preview" style="background:var(--off-white);">
+            <div class="demo-footer-strip">
+              <h4>Osgood Town Hall</h4>
+              <p>Monday – Friday<br>8:30 am – 12:00 pm · 1:00 pm – 4:00 pm<br>812-689-4240</p>
+            </div>
+          </div>
+          <div class="component-label">
+            <div class="comp-name">Footer Block</div>
+            <div class="comp-desc">Navy bg (#1B365D), white text, Open Sans body font, contact grid layout</div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-preview" style="background:var(--off-white);">
+            <div class="demo-search">
+              <input type="text" placeholder="Type your search query…" readonly>
+              <button>Search</button>
+            </div>
+          </div>
+          <div class="component-label">
+            <div class="comp-name">Full-Screen Search</div>
+            <div class="comp-desc">Semi-transparent white overlay (rgba 255,255,255,0.925), navy submit button, border-radius 0 8px 8px 0</div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-preview" style="background:#fff;flex-direction:column;gap:12px;align-items:flex-start;">
+            <div style="font-family:var(--font-display);font-size:32px;color:var(--navy);line-height:1;">Pay Your Bill Online</div>
+            <div style="font-family:var(--font-body);font-size:14px;color:var(--body-text);line-height:1.5;">An easy and convenient method to view and pay your utility bill.</div>
+          </div>
+          <div class="component-label">
+            <div class="comp-name">Basic Content Block</div>
+            <div class="comp-desc">H3 Bebas Neue navy, body Open Sans. Block type: basic, inline-blockbasic</div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-preview" style="padding:0;">
+            <div class="demo-nav" style="width:100%;border-radius:0;">
+              <span class="active">Town Hall</span>
+              <span>Services</span>
+              <span>Departments</span>
+              <span>Community</span>
+            </div>
+          </div>
+          <div class="component-label">
+            <div class="comp-name">Navigation Bar</div>
+            <div class="comp-desc">Near-black (#0F0F0F) bg, Source Sans 3 700, light gray nav text (#DDD)</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BUTTONS
+    ============================================================ -->
+    <section class="guide-section" id="buttons">
+      <div class="section-label">Interactive Elements</div>
+      <h2 class="section-title">Buttons</h2>
+      <p class="section-desc">The site uses a restrained button system. The primary button follows the Bootstrap 5 btn-primary style, customized to the brand navy. Buttons are built with Source Sans 3 semibold.</p>
+
+      <div class="button-grid">
+        <button class="btn-demo btn-primary-demo">Primary Button</button>
+        <button class="btn-demo btn-pine-demo">Pine / Accent</button>
+        <button class="btn-demo btn-steel-demo">Steel Blue</button>
+        <button class="btn-demo btn-outline-demo">Outlined</button>
+        <button class="btn-demo btn-ghost-demo">Ghost / Link</button>
+      </div>
+
+      <table class="btn-spec-table">
+        <thead>
+          <tr>
+            <th>Variant</th>
+            <th>Background</th>
+            <th>Text Color</th>
+            <th>Border Radius</th>
+            <th>Font</th>
+            <th>Padding</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label-col">Primary</td>
+            <td>#1B365D</td>
+            <td>#FFFFFF</td>
+            <td>0 8px 8px 0</td>
+            <td>Source Sans 3 600, 15px</td>
+            <td>8px 16px</td>
+          </tr>
+          <tr>
+            <td class="label-col">Pine / Accent</td>
+            <td>#244545</td>
+            <td>#FFFFFF</td>
+            <td>8px</td>
+            <td>Source Sans 3 600, 15px</td>
+            <td>10px 22px</td>
+          </tr>
+          <tr>
+            <td class="label-col">Steel Blue</td>
+            <td>#2B4D66</td>
+            <td>#FFFFFF</td>
+            <td>6px</td>
+            <td>Source Sans 3 600, 15px</td>
+            <td>10px 22px</td>
+          </tr>
+          <tr>
+            <td class="label-col">Outlined</td>
+            <td>Transparent</td>
+            <td>#1B365D</td>
+            <td>8px</td>
+            <td>Source Sans 3 600, 15px</td>
+            <td>10px 22px</td>
+          </tr>
+          <tr>
+            <td class="label-col">Ghost / Link</td>
+            <td>None</td>
+            <td>#2B4D66</td>
+            <td>0</td>
+            <td>Source Sans 3 400, 15px</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         NAVIGATION
+    ============================================================ -->
+    <section class="guide-section" id="navigation">
+      <div class="section-label">Site Structure</div>
+      <h2 class="section-title">Navigation</h2>
+      <p class="section-desc">A two-layer navigation system — a white header containing the logo and search toggle, and a near-black nav bar below with the main menu items. Submenus expand vertically on hover.</p>
+
+      <div class="nav-demo-full">
+        <div class="nav-demo-header">
+          <div class="logo-text">OSGOOD<br>INDIANA</div>
+        </div>
+        <div class="nav-demo-bar">
+          <div class="nav-item active">Town Hall</div>
+          <div class="nav-item">Services</div>
+          <div class="nav-item">Departments</div>
+          <div class="nav-item">Community</div>
+          <div class="nav-item">Ripley County</div>
+          <div class="nav-item">Our History</div>
+          <div class="nav-item">Contact</div>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--font-display);font-size:28px;color:var(--navy);margin-bottom:20px;">Site Menu Structure</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">
+        <div style="background:var(--white);border-radius:10px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,0.06);">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--steel-blue);margin-bottom:10px;">Town Hall</div>
+          <div style="font-family:var(--font-body);font-size:13px;color:#777;line-height:2;">Town Hall Information<br>Town Council<br>Council Minutes<br>Watch on YouTube<br>Ordinances<br>ADA Compliance</div>
+        </div>
+        <div style="background:var(--white);border-radius:10px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,0.06);">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--steel-blue);margin-bottom:10px;">Services</div>
+          <div style="font-family:var(--font-body);font-size:13px;color:#777;line-height:2;">Utilities<br>Pay Bill Online<br>Rate Structures<br>Utility Billing<br>Trash Collection<br>Yard Trimmings</div>
+        </div>
+        <div style="background:var(--white);border-radius:10px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,0.06);">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--steel-blue);margin-bottom:10px;">Departments</div>
+          <div style="font-family:var(--font-body);font-size:13px;color:#777;line-height:2;">Fire Department<br>Gas Department<br>Police Department<br>Street Department<br>Water Department<br>Waste Water Plant</div>
+        </div>
+        <div style="background:var(--white);border-radius:10px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,0.06);">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--steel-blue);margin-bottom:10px;">Community</div>
+          <div style="font-family:var(--font-body);font-size:13px;color:#777;line-height:2;">Business Directory<br>Osgood Trails<br>Bricktoberfest<br>Damm Theatre<br>Osgood Lions Club<br>Public Library</div>
+        </div>
+        <div style="background:var(--white);border-radius:10px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,0.06);">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--steel-blue);margin-bottom:10px;">Ripley County</div>
+          <div style="font-family:var(--font-body);font-size:13px;color:#777;line-height:2;">County Government<br>Economic Dev.<br>Emergency Mgmt.<br>Parks &amp; Rec<br>Ripley News<br>Tourism</div>
+        </div>
+        <div style="background:var(--white);border-radius:10px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,0.06);">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--steel-blue);margin-bottom:10px;">Our History</div>
+          <div style="font-family:var(--font-body);font-size:13px;color:#777;line-height:2;">Town History<br>Damm Theatre History<br>Videos That Tell Story</div>
+        </div>
+        <div style="background:var(--white);border-radius:10px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,0.06);">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--steel-blue);margin-bottom:10px;">Contact</div>
+          <div style="font-family:var(--font-body);font-size:13px;color:#777;line-height:2;">Contact Form<br>Trash Complaint Form<br>Find a Veteran's Banner</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SPACING
+    ============================================================ -->
+    <section class="guide-section" id="spacing">
+      <div class="section-label">Layout System</div>
+      <h2 class="section-title">Spacing &amp; Grid</h2>
+      <p class="section-desc">The site uses Bootstrap 5's grid system with custom spacing utilities applied via the Bootstrap Styles module. Sections use generous top/bottom padding for readability.</p>
+
+      <div class="spacing-grid">
+        <div class="space-card">
+          <div class="space-block" style="width:8px;height:8px;"></div>
+          <div class="space-label">XS</div>
+          <div class="space-value">8px / 0.5rem</div>
+        </div>
+        <div class="space-card">
+          <div class="space-block" style="width:16px;height:16px;"></div>
+          <div class="space-label">SM</div>
+          <div class="space-value">16px / 1rem</div>
+        </div>
+        <div class="space-card">
+          <div class="space-block" style="width:24px;height:24px;"></div>
+          <div class="space-label">MD</div>
+          <div class="space-value">24px / 1.5rem</div>
+        </div>
+        <div class="space-card">
+          <div class="space-block" style="width:32px;height:32px;"></div>
+          <div class="space-label">LG</div>
+          <div class="space-value">32px / 2rem</div>
+        </div>
+        <div class="space-card">
+          <div class="space-block" style="width:48px;height:48px;"></div>
+          <div class="space-label">XL</div>
+          <div class="space-value">48px / 3rem</div>
+        </div>
+        <div class="space-card">
+          <div class="space-block" style="width:64px;height:48px;"></div>
+          <div class="space-label">2XL</div>
+          <div class="space-value">64px / 4rem</div>
+        </div>
+      </div>
+
+      <div style="background:var(--white);border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <div style="font-family:var(--font-display);font-size:26px;color:var(--navy);margin-bottom:16px;">Bootstrap 5 Grid</div>
+        <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:6px;margin-bottom:16px;">
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+          <div style="background:var(--navy);opacity:0.15;height:32px;border-radius:3px;grid-column:span 1;"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:6px;">
+          <div style="background:var(--navy);height:40px;border-radius:4px;grid-column:span 3;display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-ui);font-size:11px;">col-3</div>
+          <div style="background:var(--steel-blue);height:40px;border-radius:4px;grid-column:span 6;display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-ui);font-size:11px;">col-6</div>
+          <div style="background:var(--pine);height:40px;border-radius:4px;grid-column:span 3;display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-ui);font-size:11px;">col-3</div>
+        </div>
+        <div style="margin-top:12px;font-family:var(--font-ui);font-size:13px;color:#888;">12-column Bootstrap 5 grid · Container max-width: 1320px · Gutter: 1.5rem (24px)</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VOICE & TONE
+    ============================================================ -->
+    <section class="guide-section" id="voice">
+      <div class="section-label">Communication Style</div>
+      <h2 class="section-title">Voice &amp; Tone</h2>
+      <p class="section-desc">Osgood Indiana communicates as a trusted small-town government resource. The tone is welcoming, factual, and community-focused without being overly formal or bureaucratic.</p>
+
+      <div class="trait-pills">
+        <span class="trait-pill">Civic &amp; Trustworthy</span>
+        <span class="trait-pill">Clear &amp; Direct</span>
+        <span class="trait-pill secondary">Community-Centered</span>
+        <span class="trait-pill secondary">Approachable</span>
+        <span class="trait-pill">Practical</span>
+      </div>
+
+      <div class="voice-grid">
+        <div class="voice-card do">
+          <div class="vc-title">Do — Voice Principles</div>
+          <ul>
+            <li>Use plain language — write for residents, not lawyers</li>
+            <li>Lead with the action: "Pay your bill online" not "Bill payment is available"</li>
+            <li>Be specific with times, dates, and phone numbers</li>
+            <li>Use "Town of Osgood" or "the Town" consistently</li>
+            <li>Celebrate community events with warmth (Bricktoberfest, Osgood Trails)</li>
+            <li>Keep emergency and service info prominent and unambiguous</li>
+          </ul>
+        </div>
+        <div class="voice-card dont">
+          <div class="vc-title">Don't — Avoid These</div>
+          <ul>
+            <li>Bureaucratic jargon or overly formal tone</li>
+            <li>Vague calls to action ("Click here", "Learn more" without context)</li>
+            <li>Long paragraphs for information residents need quickly</li>
+            <li>Corporate or marketing language</li>
+            <li>Outdated event info left on the site</li>
+            <li>Inconsistent use of department names or contact numbers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:var(--white);border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <div style="font-family:var(--font-display);font-size:26px;color:var(--navy);margin-bottom:20px;">Sample Page Headline Patterns</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--off-white);border-radius:8px;">
+            <span style="color:var(--pine);font-weight:700;font-size:14px;min-width:48px;">GOOD</span>
+            <span style="font-family:var(--font-display);font-size:24px;color:var(--navy);">Pay Your Utility Bill Online</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:#fff5f5;border-radius:8px;">
+            <span style="color:#c0392b;font-weight:700;font-size:14px;min-width:48px;">AVOID</span>
+            <span style="font-family:var(--font-display);font-size:24px;color:#888;">Online Utility Payment Portal</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--off-white);border-radius:8px;">
+            <span style="color:var(--pine);font-weight:700;font-size:14px;min-width:48px;">GOOD</span>
+            <span style="font-family:var(--font-display);font-size:24px;color:var(--navy);">Watch Town Council Meetings on YouTube</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:#fff5f5;border-radius:8px;">
+            <span style="color:#c0392b;font-weight:700;font-size:14px;min-width:48px;">AVOID</span>
+            <span style="font-family:var(--font-display);font-size:24px;color:#888;">Council Meeting Media Resources</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TECH STACK
+    ============================================================ -->
+    <section class="guide-section" id="tech">
+      <div class="section-label">Platform &amp; Implementation</div>
+      <h2 class="section-title">Tech Stack</h2>
+      <p class="section-desc">The site runs on Drupal 10 with the Bootstrap 5 contrib theme and DXPR Theme sub-theme. Page layouts are built with Layout Builder — no page builder outside core is required.</p>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tc-category">CMS</div>
+          <div class="tc-name">Drupal 10</div>
+          <div class="tc-detail">Core CMS platform. Content types include article, page, business, landing_page, news, veterans, council_minutes.</div>
+        </div>
+        <div class="tech-card green">
+          <div class="tc-category">Theme</div>
+          <div class="tc-name">Bootstrap 5 (contrib)</div>
+          <div class="tc-detail">Base theme providing Bootstrap 5 grid and component support. Sub-themed with DXPR Theme for layout and style overrides.</div>
+        </div>
+        <div class="tech-card steel">
+          <div class="tc-category">Sub-theme</div>
+          <div class="tc-name">DXPR Theme</div>
+          <div class="tc-detail">Provides the header region, sticky nav, full-screen search, and Layout Builder-compatible regions. Block classes: block-dxpr-theme-*.</div>
+        </div>
+        <div class="tech-card">
+          <div class="tc-category">Layout</div>
+          <div class="tc-name">Layout Builder (core)</div>
+          <div class="tc-detail">All pages built with Drupal core Layout Builder. Block types include: basic, card, large_banner, stat_card, heading, video, image_embed.</div>
+        </div>
+        <div class="tech-card green">
+          <div class="tc-category">Styles Module</div>
+          <div class="tc-name">Bootstrap Styles</div>
+          <div class="tc-detail">Adds utility CSS classes in Layout Builder UI. Key classes: bs-bg-pine, bs-text-white, bs-p-3, bs-border-width-2, rounded.</div>
+        </div>
+        <div class="tech-card steel">
+          <div class="tc-category">Custom Colors</div>
+          <div class="tc-name">Bootstrap Color Override</div>
+          <div class="tc-detail">Bootstrap 5 CSS variables overridden at :root. Custom brand colors applied via the bs-example-classes from the Bootstrap Styles module.</div>
+        </div>
+        <div class="tech-card">
+          <div class="tc-category">Fonts</div>
+          <div class="tc-name">Google Fonts</div>
+          <div class="tc-detail">Bebas Neue, Open Sans, Source Sans 3. Loaded via &lt;link&gt; in theme head. No self-hosting detected.</div>
+        </div>
+        <div class="tech-card green">
+          <div class="tc-category">Modules</div>
+          <div class="tc-name">Admin Toolbar + More</div>
+          <div class="tc-detail">admin_toolbar, back_to_top, better_social_sharing_buttons, bootstrap_styles detected in stylesheet loads.</div>
+        </div>
+      </div>
+
+      <br>
+      <div style="background:var(--navy);border-radius:12px;padding:28px;color:var(--white);">
+        <div style="font-family:var(--font-display);font-size:28px;margin-bottom:16px;">Key Bootstrap Style Classes</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+          <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:14px 16px;">
+            <div style="font-family:monospace;font-size:13px;color:#7fc8ff;margin-bottom:4px;">bs-bg-pine</div>
+            <div style="font-family:var(--font-ui);font-size:12px;opacity:0.7;">Pine green background (#244545)</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:14px 16px;">
+            <div style="font-family:monospace;font-size:13px;color:#7fc8ff;margin-bottom:4px;">bs-text-white</div>
+            <div style="font-family:var(--font-ui);font-size:12px;opacity:0.7;">Forces white text color on blocks</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:14px 16px;">
+            <div style="font-family:monospace;font-size:13px;color:#7fc8ff;margin-bottom:4px;">bs-text-center</div>
+            <div style="font-family:var(--font-ui);font-size:12px;opacity:0.7;">Centers block content</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:14px 16px;">
+            <div style="font-family:monospace;font-size:13px;color:#7fc8ff;margin-bottom:4px;">bs-p-3</div>
+            <div style="font-family:var(--font-ui);font-size:12px;opacity:0.7;">Bootstrap padding utility (1rem)</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:14px 16px;">
+            <div style="font-family:monospace;font-size:13px;color:#7fc8ff;margin-bottom:4px;">bs-border-width-2</div>
+            <div style="font-family:var(--font-ui);font-size:12px;opacity:0.7;">2px border applied to cards</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:14px 16px;">
+            <div style="font-family:monospace;font-size:13px;color:#7fc8ff;margin-bottom:4px;">rounded</div>
+            <div style="font-family:var(--font-ui);font-size:12px;opacity:0.7;">Bootstrap border-radius on blocks</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:14px 16px;">
+            <div style="font-family:monospace;font-size:13px;color:#7fc8ff;margin-bottom:4px;">bg-color</div>
+            <div style="font-family:var(--font-ui);font-size:12px;opacity:0.7;">Signals custom background is applied</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:14px 16px;">
+            <div style="font-family:monospace;font-size:13px;color:#7fc8ff;margin-bottom:4px;">_none</div>
+            <div style="font-family:var(--font-ui);font-size:12px;opacity:0.7;">No border applied (bs-border variant)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background:var(--nav-dark);color:var(--nav-text);padding:32px 64px;font-family:var(--font-ui);font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <div>
+        <strong style="font-family:var(--font-display);font-size:18px;color:var(--white);">OSGOOD INDIANA</strong>
+        <div style="opacity:0.5;margin-top:4px;">Brand Guide v1.0 — April 2026</div>
+      </div>
+      <div style="opacity:0.5;">
+        Source: osgoodindiana.org · Drupal 10 · Bootstrap 5
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+// Highlight active sidebar section on scroll
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.sidebar nav a');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
